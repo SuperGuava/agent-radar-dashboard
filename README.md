@@ -1,10 +1,14 @@
 # MangoFamily Agent Radar
 
-Last update: 2026-06-29 05:47 KST
+Last update: 2026-06-29 06:02 KST
 
 Stable dashboard goal: one GitHub link where Guava can check agent hierarchy, active work, current blockers, and recent decisions from mobile or outside the main machine.
 
-Live dashboard file: [`index.html`](index.html)
+Live dashboard: https://superguava.github.io/agent-radar-dashboard/
+
+Public mirror repo: https://github.com/SuperGuava/agent-radar-dashboard
+
+Source dashboard file: [`index.html`](index.html)
 
 ## Visual Radar
 
@@ -34,7 +38,7 @@ flowchart TD
 | Lane | Moving now | Waiting | Gate | Evidence |
 |---|---|---|---|---|
 | Strategy | Agent Radar v2 shape | GitHub main merge | No private raw logs | PR #4 |
-| Execution | Static dashboard created | GitHub Pages deployment | JSON and HTML must validate | GitHub Action |
+| Execution | Static dashboard deployed | Safe state mirror automation | JSON and HTML must validate | GitHub Action + public Pages |
 | Finance harness | Monday plan ready | Market open scan | OrderTicket approval | Toss harness |
 | Agent ops | Hierarchy visible | Better live status feed | Verified status only | `state.json` |
 
@@ -65,7 +69,7 @@ flowchart TD
 | Workstream | Owner | Status | Next trigger | Evidence |
 |---|---|---|---|---|
 | Toss autotrader harness | Mango2 | active, dry-run, HITL-only order firing | Monday pre-market brief, scan, then OrderTicket if candidate exists | external repo / local harness |
-| Agent Radar dashboard | Mango2 | static dashboard deploying | Publish GitHub Pages link, then keep `state.json` as update source | `docs/agent-radar/index.html` |
+| Agent Radar dashboard | Mango2 | deployed via public GitHub Pages mirror | Keep private PR as protocol source, mirror safe dashboard state to public Pages repo | https://superguava.github.io/agent-radar-dashboard/ |
 | MangoFamily protocol source | Mango2 + Er9 | active | Keep GitHub for protocol, Slack for runtime | `docs/mangofamily/` PR history |
 | Mango4/Mango5 routing | Mango2 | repaired and monitored | Use `#home_openclaw` for direct execution checks | Slack routing notes |
 
@@ -99,7 +103,7 @@ flowchart TD
 
 ## Machine-Readable State
 
-Automation should update [`state.json`](state.json) first. The live dashboard at [`index.html`](index.html) reads that file directly.
+Automation should update [`state.json`](state.json) first. The source dashboard at [`index.html`](index.html) reads that file directly. The public mirror should receive only safe dashboard files: `index.html`, `state.json`, and `README.md`.
 
 ## Visual System References
 

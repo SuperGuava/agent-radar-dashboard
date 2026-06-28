@@ -1,10 +1,12 @@
 {
   "schema": "mangofamily.agent_radar.v1",
-  "updated_at": "2026-06-29T05:47:00+09:00",
+  "updated_at": "2026-06-29T06:02:00+09:00",
   "source_of_truth": {
     "protocol": "github",
     "runtime": ["telegram", "slack"],
-    "dashboard_path": "docs/agent-radar/index.html"
+    "dashboard_path": "docs/agent-radar/index.html",
+    "public_dashboard_url": "https://superguava.github.io/agent-radar-dashboard/",
+    "public_mirror_repo": "https://github.com/SuperGuava/agent-radar-dashboard"
   },
   "nodes": [
     {
@@ -70,9 +72,9 @@
       "id": "agent-radar-dashboard",
       "title": "Agent Radar dashboard",
       "owner": "mango2",
-      "status": "static_dashboard_deploying",
-      "next_trigger": "Publish GitHub Pages link and keep state.json as update source",
-      "evidence": "docs/agent-radar/index.html"
+      "status": "deployed_public_mirror",
+      "next_trigger": "Keep private PR as protocol source, mirror safe dashboard state to public Pages repo",
+      "evidence": "https://superguava.github.io/agent-radar-dashboard/"
     }
   ],
   "visual_views": [
