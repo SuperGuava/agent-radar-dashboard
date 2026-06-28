@@ -593,7 +593,7 @@
           ["Execution", nodes.filter((node) => node.lane.includes("execution"))],
           ["Evidence", nodes.filter((node) => node.lane.includes("evidence"))],
           ["Hermes", nodes.filter((node) => node.lane.includes("hermes") || node.lane.includes("verification") || node.lane.includes("communication"))],
-          ["Resilience", nodes.filter((node) => node.lane.includes("resilience"))],
+          ["Independent Lab", nodes.filter((node) => node.lane.includes("independent_lab"))],
         ];
 
         byId("radar-map").innerHTML = lanes
