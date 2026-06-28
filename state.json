@@ -1,0 +1,193 @@
+{
+  "schema": "mangofamily.agent_radar.v1",
+  "updated_at": "2026-06-29T05:47:00+09:00",
+  "source_of_truth": {
+    "protocol": "github",
+    "runtime": ["telegram", "slack"],
+    "dashboard_path": "docs/agent-radar/index.html"
+  },
+  "nodes": [
+    {
+      "id": "mango2",
+      "name": "Mango2",
+      "role": "main judgment, problem reframing, structure design, final convergence",
+      "lane": "hq_apply",
+      "status": "active"
+    },
+    {
+      "id": "mango4",
+      "name": "Mango4",
+      "role": "execution alignment and next-action breakdown",
+      "lane": "execution",
+      "status": "active"
+    },
+    {
+      "id": "mango5",
+      "name": "Mango5",
+      "role": "data, evidence, statistics, and logs",
+      "lane": "evidence",
+      "status": "active"
+    },
+    {
+      "id": "er9",
+      "name": "Er9",
+      "role": "Hermes-side coordination",
+      "lane": "coordination",
+      "status": "active"
+    },
+    {
+      "id": "newton",
+      "name": "Newton",
+      "role": "fact checking and source grounding",
+      "lane": "verification",
+      "status": "available"
+    },
+    {
+      "id": "hemingway",
+      "name": "Hemingway",
+      "role": "user-facing wording and report polish",
+      "lane": "communication",
+      "status": "available"
+    },
+    {
+      "id": "er999",
+      "name": "Er999",
+      "role": "secondary operating axis and runtime continuity",
+      "lane": "resilience",
+      "status": "available"
+    }
+  ],
+  "workstreams": [
+    {
+      "id": "toss-autotrader-harness",
+      "title": "Toss autotrader harness",
+      "owner": "mango2",
+      "status": "active_dry_run_hitl_only",
+      "next_trigger": "Monday pre-market brief, scan, then OrderTicket if candidate exists",
+      "evidence": "external repo / local harness"
+    },
+    {
+      "id": "agent-radar-dashboard",
+      "title": "Agent Radar dashboard",
+      "owner": "mango2",
+      "status": "static_dashboard_deploying",
+      "next_trigger": "Publish GitHub Pages link and keep state.json as update source",
+      "evidence": "docs/agent-radar/index.html"
+    }
+  ],
+  "visual_views": [
+    {
+      "id": "hierarchy_graph",
+      "label": "Agent hierarchy and command flow",
+      "surface": "github_mermaid",
+      "status": "added"
+    },
+    {
+      "id": "movement_board",
+      "label": "Moving, waiting, gate, evidence board",
+      "surface": "github_markdown",
+      "status": "added"
+    },
+    {
+      "id": "future_trace_wall",
+      "label": "Agent run traces, latency, tool calls, failures",
+      "surface": "otel_langfuse_candidate",
+      "status": "candidate"
+    }
+  ],
+  "reference_links": [
+    {
+      "name": "GitHub Projects",
+      "url": "https://docs.github.com/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects",
+      "use": "native GitHub board and status layer"
+    },
+    {
+      "name": "Plane",
+      "url": "https://github.com/makeplane/plane",
+      "use": "issue, sprint, docs, triage model"
+    },
+    {
+      "name": "Langfuse",
+      "url": "https://github.com/langfuse/langfuse",
+      "use": "LLM observability and traces"
+    },
+    {
+      "name": "OpenTelemetry",
+      "url": "https://opentelemetry.io/docs/",
+      "use": "standard traces, metrics, logs"
+    },
+    {
+      "name": "Grafana",
+      "url": "https://github.com/grafana/grafana",
+      "use": "metrics dashboard"
+    }
+  ],
+  "data_automation_stack": [
+    {
+      "name": "Firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "layer": "web_to_llm_extraction",
+      "use": "website to Markdown and structured data"
+    },
+    {
+      "name": "Crawl4AI",
+      "url": "https://github.com/unclecode/crawl4ai",
+      "layer": "ai_oriented_crawling",
+      "use": "agent and RAG-friendly crawl outputs"
+    },
+    {
+      "name": "browser-use",
+      "url": "https://github.com/browser-use/browser-use",
+      "layer": "browser_workflow_automation",
+      "use": "supervised browser actions when APIs are missing"
+    },
+    {
+      "name": "Crawlee",
+      "url": "https://github.com/apify/crawlee",
+      "layer": "production_crawling",
+      "use": "queues, retries, browser crawlers, scheduled crawls"
+    },
+    {
+      "name": "Scrapy",
+      "url": "https://github.com/scrapy/scrapy",
+      "layer": "classic_scraping",
+      "use": "large-scale spiders and pipelines"
+    },
+    {
+      "name": "MarkItDown",
+      "url": "https://github.com/microsoft/markitdown",
+      "layer": "document_conversion",
+      "use": "document to Markdown conversion"
+    },
+    {
+      "name": "Scrapling",
+      "url": "https://github.com/D4Vinci/Scrapling",
+      "layer": "adaptive_scraping",
+      "use": "resilient extraction when page structures change"
+    },
+    {
+      "name": "scrcpy",
+      "url": "https://github.com/Genymobile/scrcpy",
+      "layer": "mobile_screen_bridge",
+      "use": "supervised Android screen inspection and control"
+    },
+    {
+      "name": "AutoScraper",
+      "url": "https://github.com/alirezamika/autoscraper",
+      "layer": "pattern_extraction",
+      "use": "lightweight extraction from examples"
+    },
+    {
+      "name": "curl-impersonate",
+      "url": "https://github.com/lwthiker/curl-impersonate",
+      "layer": "http_compatibility",
+      "use": "debug browser-like HTTP behavior"
+    }
+  ],
+  "rules": [
+    "No secrets, tokens, full account numbers, private family details, or raw chat dumps.",
+    "GitHub stores durable decisions and protocol; chat stores runtime coordination.",
+    "Use unknown instead of unverifiable status.",
+    "Every meaningful handoff records state, judgment, and next trigger."
+  ]
+}
