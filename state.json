@@ -4,7 +4,7 @@
   "source_of_truth": {
     "protocol": "github",
     "runtime": ["telegram", "slack"],
-    "dashboard_path": "docs/agent-radar/index.html",
+    "dashboard_path": "index.html",
     "public_dashboard_url": "https://superguava.github.io/agent-radar-dashboard/",
     "public_mirror_repo": "https://github.com/SuperGuava/agent-radar-dashboard"
   },
