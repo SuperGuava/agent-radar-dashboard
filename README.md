@@ -1,6 +1,6 @@
 # MangoFamily Agent Radar
 
-Last update: 2026-06-29 06:02 KST
+Last update: 2026-06-29 05:54 KST
 
 Stable dashboard goal: one GitHub link where Guava can check agent hierarchy, active work, current blockers, and recent decisions from mobile or outside the main machine.
 
@@ -18,10 +18,10 @@ flowchart TD
   Radar --> HQ[Mango2 / HQ]
   HQ --> M4[Mango4 / execution]
   HQ --> M5[Mango5 / evidence]
-  HQ --> E999[Er999 / runtime continuity]
-  HQ --> E9[Er9 / Hermes coordination]
-  E9 --> Newton[Newton / verification]
-  E9 --> Hemingway[Hemingway / communication]
+  HQ --> E999[Er999 / independent continuity]
+  HQ --> E9[Er9 / Hermes leader]
+  E9 --> Newton[Newton / verification under Er9]
+  E9 --> Hemingway[Hemingway / communication under Er9]
 
   Radar --> W1[Toss autotrader harness]
   Radar --> W2[Agent Radar dashboard]
@@ -40,7 +40,8 @@ flowchart TD
 | Strategy | Agent Radar v2 shape | GitHub main merge | No private raw logs | PR #4 |
 | Execution | Static dashboard deployed | Safe state mirror automation | JSON and HTML must validate | GitHub Action + public Pages |
 | Finance harness | Monday plan ready | Market open scan | OrderTicket approval | Toss harness |
-| Agent ops | Hierarchy visible | Better live status feed | Verified status only | `state.json` |
+| Agent ops | Er9/Hermes chain corrected | Better live status feed | Verified status only | `state.json` |
+| Command spine | Slack root-thread protocol drafting | First live Slack trial | Close as KEEP/KILL/PIVOT/WAIT/PROMOTE | `slack-command-spine.md` |
 
 ## Snapshot
 
@@ -52,6 +53,20 @@ flowchart TD
 | Update rule | Any meaningful agent handoff or decision updates this page or `state.json` |
 | Safety rule | No secrets, tokens, full account numbers, private family details, or raw chat dumps |
 
+## Command Structure
+
+| Chain | Meaning |
+|---|---|
+| Guava -> Mango2 | Direction, priority, final intent |
+| Mango2 -> Mango4 | Direct execution alignment |
+| Mango2 -> Mango5 | Direct evidence and data grounding |
+| Mango2 -> Er9 | Hermes leadership, loop operation, knowledge promotion candidates |
+| Er9 -> Newton | Hermes-managed verification, audit, critique |
+| Er9 -> Hemingway | Hermes-managed communication, report wording, narrative polish |
+| Mango2 -> Er999 | Independent sub-node for continuity, state, record stability |
+
+Correction: Er9 is under Mango2, but Er9 is the leader and manager of the Hermes bots. Newton and Hemingway should be managed through Er9 unless Mango2 explicitly bypasses the chain.
+
 ## Hierarchy
 
 | Node | Role | Primary lane | Public status |
@@ -59,9 +74,9 @@ flowchart TD
 | Mango2 | Main judgment, problem reframing, structure design, final convergence | HQ / apply | active |
 | Mango4 | Execution alignment, next-action breakdown, routing discipline | execution | active |
 | Mango5 | Data, evidence, statistical checks, logs | evidence | active |
-| Er9 | Hermes-side coordinator and loop steward | coordination | active |
-| Newton | Fact checking and source grounding | verification | available |
-| Hemingway | User-facing wording and report polish | communication | available |
+| Er9 | Hermes bot leader, loop compiler, Slack thread manager, knowledge promotion candidate owner | Hermes leadership | active |
+| Newton | Fact checking, source grounding, audit, critique under Er9 | verification | available |
+| Hemingway | User-facing wording, report polish, narrative output under Er9 | communication | available |
 | Er999 | Secondary operating axis and runtime continuity | resilience | available |
 
 ## Active Workstreams
@@ -70,6 +85,7 @@ flowchart TD
 |---|---|---|---|---|
 | Toss autotrader harness | Mango2 | active, dry-run, HITL-only order firing | Monday pre-market brief, scan, then OrderTicket if candidate exists | external repo / local harness |
 | Agent Radar dashboard | Mango2 | deployed via public GitHub Pages mirror | Keep private PR as protocol source, mirror safe dashboard state to public Pages repo | https://superguava.github.io/agent-radar-dashboard/ |
+| Slack Command Spine v0.1 | Er9 | drafting protocol | Run every meaningful Slack task through one root thread and close it with KEEP/KILL/PIVOT/WAIT/PROMOTE | https://github.com/SuperGuava/agent-radar-dashboard/blob/main/slack-command-spine.md |
 | MangoFamily protocol source | Mango2 + Er9 | active | Keep GitHub for protocol, Slack for runtime | `docs/mangofamily/` PR history |
 | Mango4/Mango5 routing | Mango2 | repaired and monitored | Use `#home_openclaw` for direct execution checks | Slack routing notes |
 
@@ -82,6 +98,8 @@ flowchart TD
 | 2026-06-27 | Project harness-first operation rule | Project-specific harnesses are canonical execution surfaces |
 | 2026-06-27 | Toss autotrader direct firing permission changed | Agent/harness may fire orders only after explicit user approval via OrderTicket |
 | 2026-06-28 | Agent Radar needed | Create stable external/mobile dashboard link |
+| 2026-06-29 | Er9/Hermes chain corrected | Er9 is under Mango2 but leads Newton/Hemingway and manages Hermes loops |
+| 2026-06-29 | Slack Command Spine v0.1 selected | Work threads must have one root thread and close as KEEP/KILL/PIVOT/WAIT/PROMOTE |
 
 ## Current Operating Contract
 
@@ -90,6 +108,8 @@ flowchart TD
 3. Runtime chatter stays in chat; durable decisions move to GitHub.
 4. The board reports state, owner, next trigger, and evidence. It does not store secrets or raw private logs.
 5. If a status cannot be verified, write `unknown` instead of inventing certainty.
+6. Slack is not a dumping ground. Each meaningful work thread needs an owner, judge, checkpoint, evidence, and exit state.
+7. Er9 compiles Hermes-side evidence and options; Mango2 decides promotion.
 
 ## Update Cadence
 
@@ -103,7 +123,7 @@ flowchart TD
 
 ## Machine-Readable State
 
-Automation should update [`state.json`](state.json) first. The source dashboard at [`index.html`](index.html) reads that file directly. The public mirror should receive only safe dashboard files: `index.html`, `state.json`, and `README.md`.
+Automation should update [`state.json`](state.json) first. The source dashboard at [`index.html`](index.html) reads that file directly. The public mirror should receive only safe dashboard files: `index.html`, `state.json`, `README.md`, and `slack-command-spine.md`.
 
 ## Visual System References
 

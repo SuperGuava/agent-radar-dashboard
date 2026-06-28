@@ -1,12 +1,54 @@
 {
   "schema": "mangofamily.agent_radar.v1",
-  "updated_at": "2026-06-29T06:02:00+09:00",
+  "updated_at": "2026-06-29T05:54:00+09:00",
   "source_of_truth": {
     "protocol": "github",
     "runtime": ["telegram", "slack"],
     "dashboard_path": "docs/agent-radar/index.html",
     "public_dashboard_url": "https://superguava.github.io/agent-radar-dashboard/",
     "public_mirror_repo": "https://github.com/SuperGuava/agent-radar-dashboard"
+  },
+  "command_structure": {
+    "principle": "Mango2 holds final promotion authority; Er9 leads and manages the Hermes bots under Mango2.",
+    "chains": [
+      {
+        "from": "guava",
+        "to": "mango2",
+        "relation": "direction, priority, final intent"
+      },
+      {
+        "from": "mango2",
+        "to": "mango4",
+        "relation": "direct execution alignment"
+      },
+      {
+        "from": "mango2",
+        "to": "mango5",
+        "relation": "direct evidence and data grounding"
+      },
+      {
+        "from": "mango2",
+        "to": "er9",
+        "relation": "Hermes leadership, loop operation, knowledge promotion candidates"
+      },
+      {
+        "from": "er9",
+        "to": "newton",
+        "relation": "Hermes-managed verification, audit, critique"
+      },
+      {
+        "from": "er9",
+        "to": "hemingway",
+        "relation": "Hermes-managed communication, report wording, narrative polish"
+      },
+      {
+        "from": "mango2",
+        "to": "er999",
+        "relation": "independent sub-node for continuity, state, record stability"
+      }
+    ],
+    "thread_exit_states": ["KEEP", "KILL", "PIVOT", "WAIT", "PROMOTE"],
+    "promotion_path": ["Slack root thread", "Er9 loop report", "+/ inbox", "Wiki", "Skill/Memory"]
   },
   "nodes": [
     {
@@ -33,21 +75,21 @@
     {
       "id": "er9",
       "name": "Er9",
-      "role": "Hermes-side coordination",
-      "lane": "coordination",
+      "role": "Hermes bot leader, loop compiler, Slack thread manager, knowledge promotion candidate owner",
+      "lane": "hermes_leadership",
       "status": "active"
     },
     {
       "id": "newton",
       "name": "Newton",
-      "role": "fact checking and source grounding",
+      "role": "fact checking, source grounding, audit, critique under Er9",
       "lane": "verification",
       "status": "available"
     },
     {
       "id": "hemingway",
       "name": "Hemingway",
-      "role": "user-facing wording and report polish",
+      "role": "user-facing wording, report polish, narrative output under Er9",
       "lane": "communication",
       "status": "available"
     },
@@ -75,6 +117,14 @@
       "status": "deployed_public_mirror",
       "next_trigger": "Keep private PR as protocol source, mirror safe dashboard state to public Pages repo",
       "evidence": "https://superguava.github.io/agent-radar-dashboard/"
+    },
+    {
+      "id": "slack-command-spine",
+      "title": "Slack Command Spine v0.1",
+      "owner": "er9",
+      "status": "drafting_protocol",
+      "next_trigger": "Run every meaningful Slack task through one root thread and close it with KEEP/KILL/PIVOT/WAIT/PROMOTE",
+      "evidence": "https://github.com/SuperGuava/agent-radar-dashboard/blob/main/slack-command-spine.md"
     }
   ],
   "visual_views": [
@@ -190,6 +240,8 @@
     "No secrets, tokens, full account numbers, private family details, or raw chat dumps.",
     "GitHub stores durable decisions and protocol; chat stores runtime coordination.",
     "Use unknown instead of unverifiable status.",
-    "Every meaningful handoff records state, judgment, and next trigger."
+    "Every meaningful handoff records state, judgment, and next trigger.",
+    "Every Slack work thread must close as KEEP, KILL, PIVOT, WAIT, or PROMOTE.",
+    "Only promoted judgments move from Slack to Wiki, Skill, or Memory."
   ]
 }

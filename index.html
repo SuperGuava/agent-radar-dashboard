@@ -363,6 +363,30 @@
         gap: 12px;
       }
 
+      .chain {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .chain-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        background: var(--panel);
+      }
+
+      .chain-card h3 {
+        font-size: 15px;
+      }
+
+      .chain-card p {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
       .link-card {
         min-height: 128px;
         padding: 14px;
@@ -412,6 +436,7 @@
 
         .grid.work,
         .links,
+        .chain,
         .rules {
           grid-template-columns: 1fr;
         }
@@ -508,6 +533,14 @@
           <div class="radar-map" id="radar-map"></div>
         </section>
 
+        <section class="section" aria-labelledby="chain-title">
+          <div class="section-head">
+            <h2 id="chain-title">Command Chain</h2>
+            <p class="section-note">Er9 leads Hermes under Mango2.</p>
+          </div>
+          <div class="chain" id="command-chain"></div>
+        </section>
+
         <section class="section" aria-labelledby="nodes-title">
           <div class="section-head">
             <h2 id="nodes-title">Agents</h2>
@@ -558,8 +591,8 @@
         const lanes = [
           ["HQ", nodes.filter((node) => node.lane.includes("hq"))],
           ["Execution", nodes.filter((node) => node.lane.includes("execution"))],
-          ["Evidence", nodes.filter((node) => node.lane.includes("evidence") || node.lane.includes("verification"))],
-          ["Coordination", nodes.filter((node) => node.lane.includes("coordination") || node.lane.includes("communication"))],
+          ["Evidence", nodes.filter((node) => node.lane.includes("evidence"))],
+          ["Hermes", nodes.filter((node) => node.lane.includes("hermes") || node.lane.includes("verification") || node.lane.includes("communication"))],
           ["Resilience", nodes.filter((node) => node.lane.includes("resilience"))],
         ];
 
@@ -584,6 +617,19 @@
                 </div>
                 <p>${node.role}</p>
                 <span class="lane">${clean(node.lane)}</span>
+              </article>
+            `,
+          )
+          .join("");
+      }
+
+      function renderCommandChain(commandStructure) {
+        byId("command-chain").innerHTML = commandStructure.chains
+          .map(
+            (chain) => `
+              <article class="chain-card">
+                <h3>${chain.from} -> ${chain.to}</h3>
+                <p>${chain.relation}</p>
               </article>
             `,
           )
@@ -645,6 +691,7 @@
         byId("runtime").textContent = state.source_of_truth.runtime.join(" / ");
 
         renderMap(state.nodes);
+        renderCommandChain(state.command_structure);
         renderNodes(state.nodes);
         renderWorkstreams(state.workstreams);
         renderStack(state.data_automation_stack);
