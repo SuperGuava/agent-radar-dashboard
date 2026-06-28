@@ -3,7 +3,7 @@
 Status: draft protocol
 Owner: Er9
 Final judgment: Mango2
-Last update: 2026-06-29 06:09 KST
+Last update: 2026-06-29 06:14 KST
 
 ## Frame
 
@@ -13,27 +13,29 @@ Slack should act as a command spine:
 
 1. One task starts in one root thread.
 2. Er9 operates the Hermes line loop and manages Newton/Hemingway.
-3. Er999 is treated as a separate Hermes-family experiment lab with Mango.
-4. Evidence, experiment, and lesson are compressed before promotion.
-5. Mango2 makes the final promotion decision.
-6. Only promoted judgment moves to Wiki, Skill, Memory, or protocol docs.
+3. Mango is recognized as the retired former leader, now independent on a separate laptop.
+4. Er999 is treated as a separate Hermes-family experiment lab partner with Mango.
+5. Evidence, experiment, and lesson are compressed before promotion.
+6. Mango2 makes the final promotion decision.
+7. Only promoted judgment moves to Wiki, Skill, Memory, or protocol docs.
 
 ## Command Structure
 
 | Role | Responsibility |
 |---|---|
 | Guava | Direction, priority, final intent |
+| Mango | Retired former leader; independent lab resident on the separate laptop |
 | Mango2 | Final judgment, promotion authority, system framing |
 | Mango4 | Execution alignment and next actions |
 | Mango5 | Evidence, data, metrics, logs |
 | Er9 | Hermes leader, Slack loop operator, knowledge promotion candidate owner |
 | Newton | Verification, source audit, critique under Er9 |
 | Hemingway | Communication, report wording, narrative polish under Er9 |
-| Er999 | Hermes-family independent experiment lab with Mango on a separate laptop |
+| Er999 | Hermes-family independent experiment lab partner with retired Mango on a separate laptop |
 
 Er9 is under Mango2, but Er9 leads the Hermes bots. Newton and Hemingway should be managed through Er9 unless Mango2 explicitly bypasses the chain.
 
-Er999 is also a Hermes bot, but it is not a normal Er9-managed operating bot. Er999 lives with Mango on the separate laptop and functions as an independent experiment lab. If Mango2 wants to try a radical experiment, Mango2 should propose it to Guava; Guava can then task Mango and Er999.
+Mango was the former leader, but Mango is now retired and lives independently on the separate laptop. Er999 is also a Hermes bot, but it is not a normal Er9-managed operating bot. Er999 lives with Mango and functions as an independent experiment lab. If Mango2 wants to try a radical experiment, Mango2 should propose it to Guava; Guava can then task Mango and Er999.
 
 ## Root Thread Rule
 
@@ -137,18 +139,18 @@ Do not promote:
 4. Open-ended discussion with no decision.
 5. Raw chat logs.
 
-## Er999 Lab Rule
+## Mango/Er999 Lab Rule
 
-Er999 belongs to the Hermes family, but it is a separate lab node rather than a normal loop worker.
+Mango is the retired former leader. Er999 belongs to the Hermes family. Together they form a separate lab node rather than a normal loop worker.
 
-Use Er999 when:
+Use Mango/Er999 when:
 
 1. The work is experimental enough to need a separate machine context.
 2. Mango2 has a radical proposal worth testing.
 3. Guava explicitly tasks Mango and Er999.
 4. The result can return as evidence, prototype, or lesson.
 
-Do not use Er999 for routine Slack thread management, ordinary wording, or standard verification loops.
+Do not use Mango/Er999 for routine Slack thread management, ordinary wording, or standard verification loops.
 
 ## First Operating Bet
 

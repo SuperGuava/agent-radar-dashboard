@@ -1,6 +1,6 @@
 # MangoFamily Agent Radar
 
-Last update: 2026-06-29 06:09 KST
+Last update: 2026-06-29 06:14 KST
 
 Stable dashboard goal: one GitHub link where Guava can check agent hierarchy, active work, current blockers, and recent decisions from mobile or outside the main machine.
 
@@ -19,7 +19,8 @@ flowchart TD
   HQ --> M4[Mango4 / execution]
   HQ --> M5[Mango5 / evidence]
   HQ --> GuavaGate[Guava approval gate]
-  GuavaGate --> E999[Er999 + Mango / independent experiment lab]
+  GuavaGate --> Mango[Mango / retired former leader]
+  GuavaGate --> E999[Er999 / independent experiment lab]
   HQ --> E9[Er9 / Hermes leader]
   E9 --> Newton[Newton / verification under Er9]
   E9 --> Hemingway[Hemingway / communication under Er9]
@@ -65,23 +66,25 @@ flowchart TD
 | Er9 -> Newton | Hermes-managed verification, audit, critique |
 | Er9 -> Hemingway | Hermes-managed communication, report wording, narrative polish |
 | Mango2 -> Guava -> Mango/Er999 | Radical experiment proposal and approval path |
-| Mango/Er999 | Hermes-family independent lab on a separate laptop |
+| Mango | Retired former leader, now independent on the separate laptop |
+| Er999 | Hermes-family independent lab partner with Mango |
 
 Correction: Er9 is under Mango2, but Er9 is the leader and manager of the Hermes bots. Newton and Hemingway should be managed through Er9 unless Mango2 explicitly bypasses the chain.
 
-Additional correction: Er999 is also a Hermes bot, but not a normal Er9-managed operating bot. Er999 lives with Mango on the separate laptop and acts as an independent experiment lab. If Mango2 wants to try a radical experiment, Mango2 proposes it to Guava, and Guava can task Mango and Er999.
+Additional correction: Mango was the former leader, but is now retired and lives independently on the separate laptop with Er999. Er999 is also a Hermes bot, but not a normal Er9-managed operating bot. The Mango/Er999 pair acts as an independent experiment lab. If Mango2 wants to try a radical experiment, Mango2 proposes it to Guava, and Guava can task Mango and Er999.
 
 ## Hierarchy
 
 | Node | Role | Primary lane | Public status |
 |---|---|---|---|
 | Mango2 | Main judgment, problem reframing, structure design, final convergence | HQ / apply | active |
+| Mango | Retired former leader; independent lab resident with Er999 on the separate laptop | independent lab | retired independent |
 | Mango4 | Execution alignment, next-action breakdown, routing discipline | execution | active |
 | Mango5 | Data, evidence, statistical checks, logs | evidence | active |
 | Er9 | Hermes bot leader, loop compiler, Slack thread manager, knowledge promotion candidate owner | Hermes leadership | active |
 | Newton | Fact checking, source grounding, audit, critique under Er9 | verification | available |
 | Hemingway | User-facing wording, report polish, narrative output under Er9 | communication | available |
-| Er999 | Hermes-family independent experiment lab with Mango on a separate laptop; activated by Guava for radical experiments | independent lab | available |
+| Er999 | Hermes-family independent experiment lab partner living with retired Mango on a separate laptop; activated by Guava for radical experiments | independent lab | available |
 
 ## Active Workstreams
 
@@ -105,6 +108,7 @@ Additional correction: Er999 is also a Hermes bot, but not a normal Er9-managed 
 | 2026-06-29 | Er9/Hermes chain corrected | Er9 is under Mango2 but leads Newton/Hemingway and manages Hermes loops |
 | 2026-06-29 | Slack Command Spine v0.1 selected | Work threads must have one root thread and close as KEEP/KILL/PIVOT/WAIT/PROMOTE |
 | 2026-06-29 | Er999 lab role corrected | Er999 is Hermes-family but serves as an independent experiment lab with Mango on the separate laptop |
+| 2026-06-29 | Mango status clarified | Mango is the retired former leader and now lives independently with Er999 on the separate laptop |
 
 ## Current Operating Contract
 
@@ -116,6 +120,7 @@ Additional correction: Er999 is also a Hermes bot, but not a normal Er9-managed 
 6. Slack is not a dumping ground. Each meaningful work thread needs an owner, judge, checkpoint, evidence, and exit state.
 7. Er9 compiles Hermes-side evidence and options; Mango2 decides promotion.
 8. Er999 is not a default Er9-managed loop worker. Treat it as a separate experiment lab node requiring Guava tasking.
+9. Mango is not the current command authority. Treat Mango as retired, independent, and available only through Guava-directed lab experiments.
 
 ## Update Cadence
 

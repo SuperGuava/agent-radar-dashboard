@@ -1,6 +1,6 @@
 {
   "schema": "mangofamily.agent_radar.v1",
-  "updated_at": "2026-06-29T06:09:00+09:00",
+  "updated_at": "2026-06-29T06:14:00+09:00",
   "source_of_truth": {
     "protocol": "github",
     "runtime": ["telegram", "slack"],
@@ -9,7 +9,7 @@
     "public_mirror_repo": "https://github.com/SuperGuava/agent-radar-dashboard"
   },
   "command_structure": {
-    "principle": "Mango2 holds final promotion authority; Er9 leads the Hermes operating line; Er999 is also Hermes-family but acts as an independent lab node with Mango on a separate laptop.",
+    "principle": "Mango2 is the current main authority; Mango is the retired former leader living independently with Er999 on a separate laptop; Er9 leads the Hermes operating line.",
     "chains": [
       {
         "from": "guava",
@@ -54,7 +54,7 @@
       {
         "from": "guava",
         "to": "mango_er999_lab",
-        "relation": "approval and tasking path for the separate laptop experiment lab"
+        "relation": "approval and tasking path for Mango, the retired former leader, and Er999 in the separate laptop experiment lab"
       }
     ],
     "thread_exit_states": ["KEEP", "KILL", "PIVOT", "WAIT", "PROMOTE"],
@@ -67,6 +67,13 @@
       "role": "main judgment, problem reframing, structure design, final convergence",
       "lane": "hq_apply",
       "status": "active"
+    },
+    {
+      "id": "mango",
+      "name": "Mango",
+      "role": "retired former leader; independent lab resident with Er999 on the separate laptop",
+      "lane": "independent_lab",
+      "status": "retired_independent"
     },
     {
       "id": "mango4",
@@ -106,7 +113,7 @@
     {
       "id": "er999",
       "name": "Er999",
-      "role": "Hermes-family independent experiment lab with Mango on a separate laptop; activated by Guava for radical experiments",
+      "role": "Hermes-family independent experiment lab partner living with retired Mango on a separate laptop; activated by Guava for radical experiments",
       "lane": "independent_lab",
       "status": "available"
     }
@@ -253,6 +260,7 @@
     "Every meaningful handoff records state, judgment, and next trigger.",
     "Every Slack work thread must close as KEEP, KILL, PIVOT, WAIT, or PROMOTE.",
     "Only promoted judgments move from Slack to Wiki, Skill, or Memory.",
-    "Er999 is Hermes-family but not a normal Er9-managed operating bot; it is a separate experiment lab node."
+    "Er999 is Hermes-family but not a normal Er9-managed operating bot; it is a separate experiment lab node.",
+    "Mango is the retired former leader and now lives independently with Er999 on the separate laptop."
   ]
 }

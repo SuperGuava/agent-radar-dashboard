@@ -272,6 +272,11 @@
         color: var(--blue);
       }
 
+      .pill.retired {
+        background: rgba(232, 197, 91, 0.14);
+        color: var(--yellow);
+      }
+
       .node p,
       .work-card p,
       .rule p,
@@ -585,7 +590,11 @@
 
       const byId = (id) => document.getElementById(id);
       const clean = (value) => String(value || "").replaceAll("_", " ");
-      const statusClass = (status) => (status === "available" ? "available" : "");
+      const statusClass = (status) => {
+        if (status === "available") return "available";
+        if (String(status || "").includes("retired")) return "retired";
+        return "";
+      };
 
       function renderMap(nodes) {
         const lanes = [
