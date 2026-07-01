@@ -1,6 +1,6 @@
 # MangoFamily Agent Radar
 
-Last update: 2026-07-02 04:52 KST
+Last update: 2026-07-02 04:53 KST
 
 Stable dashboard goal: one GitHub link where Guava can check agent hierarchy, active work, current blockers, and recent decisions from mobile or outside the main machine.
 
