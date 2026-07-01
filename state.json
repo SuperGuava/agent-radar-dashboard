@@ -1,6 +1,6 @@
 {
   "schema": "mangofamily.agent_radar.v1",
-  "updated_at": "2026-07-02T04:51:35+09:00",
+  "updated_at": "2026-07-02T04:52:54+09:00",
   "source_of_truth": {
     "protocol": "github",
     "runtime": [
@@ -140,15 +140,15 @@
       "owner": "mango2",
       "status": "active_live_armed_hitl_only_no_position",
       "next_trigger": "OpenClaw radar cron every 30 minutes; any order still requires OrderTicket and explicit user approval",
-      "evidence": "2026-07-02 04:51:35 KST dashboard-json: mode LIVE, armed True, positions 0, open 0, pending signals 0, trades 0/6, deployed 0"
+      "evidence": "2026-07-02 04:52:54 KST dashboard-json: mode LIVE, armed True, positions 0, open 0, pending signals 0, trades 0/6, deployed 0"
     },
     {
       "id": "agent-radar-dashboard",
       "title": "Agent Radar dashboard",
       "owner": "mango2",
       "status": "automated_refresh_active",
-      "next_trigger": "OpenClaw cron every 30 minutes KST; manual run after meaningful state changes",
-      "evidence": "Refresh loop last ran 2026-07-02 04:51 KST and publishes only public-safe dashboard files"
+      "next_trigger": "OS crontab every 30 minutes KST; manual run after meaningful state changes",
+      "evidence": "Refresh loop last ran 2026-07-02 04:52 KST and publishes only public-safe dashboard files"
     },
     {
       "id": "slack-command-spine",
@@ -305,10 +305,10 @@
   ],
   "automation": {
     "status": "active",
-    "mode": "local_openclaw_cron_plus_manual_trigger",
+    "mode": "local_os_crontab_plus_manual_trigger",
     "loop": "Every 30 minutes KST refresh source state and publish safe files to the public mirror.",
     "triggers": [
-      "OpenClaw cron: MangoFamily Agent Radar refresh loop",
+      "OS crontab: MangoFamily Agent Radar refresh loop",
       "Manual run after major Telegram or Slack operating-state changes",
       "Manual run after Toss autotrader dashboard-json verification"
     ],
@@ -318,6 +318,6 @@
       "README.md",
       "slack-command-spine.md"
     ],
-    "last_run_at": "2026-07-02T04:51:35+09:00"
+    "last_run_at": "2026-07-02T04:52:54+09:00"
   }
 }

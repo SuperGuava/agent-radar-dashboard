@@ -1,6 +1,6 @@
 # MangoFamily Agent Radar
 
-Last update: 2026-07-02 04:51 KST
+Last update: 2026-07-02 04:52 KST
 
 Stable dashboard goal: one GitHub link where Guava can check agent hierarchy, active work, current blockers, and recent decisions from mobile or outside the main machine.
 
@@ -151,7 +151,7 @@ Active trigger:
 
 | Trigger | Cadence | Action |
 |---|---:|---|
-| OpenClaw cron | every 30 minutes KST | Refresh source state, read Toss `dashboard-json` when available, publish safe files to public mirror |
+| OS crontab | every 30 minutes KST | Refresh source state, read Toss `dashboard-json` when available, publish safe files to public mirror |
 | Manual state change | after meaningful Telegram/Slack/Toss updates | Run the same command immediately |
 
 ## Visual System References
