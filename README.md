@@ -1,6 +1,6 @@
 # MangoFamily Agent Radar
 
-Last update: 2026-07-01 15:20 KST
+Last update: 2026-07-02 04:50 KST
 
 Stable dashboard goal: one GitHub link where Guava can check agent hierarchy, active work, current blockers, and recent decisions from mobile or outside the main machine.
 
@@ -139,7 +139,20 @@ Additional correction: Mango was the former leader, but is now retired and lives
 
 ## Machine-Readable State
 
-Automation should update [`state.json`](state.json) first. The source dashboard at [`index.html`](index.html) reads that file directly. The public mirror should receive only safe dashboard files: `index.html`, `state.json`, `README.md`, and `slack-command-spine.md`.
+Automation updates [`state.json`](state.json) first. The source dashboard at [`index.html`](index.html) reads that file directly. The public mirror receives only safe dashboard files: `index.html`, `state.json`, `README.md`, and `slack-command-spine.md`.
+
+Refresh command:
+
+```bash
+python3 scripts/agent_radar_refresh.py --commit --publish --push
+```
+
+Active trigger:
+
+| Trigger | Cadence | Action |
+|---|---:|---|
+| OpenClaw cron | every 30 minutes KST | Refresh source state, read Toss `dashboard-json` when available, publish safe files to public mirror |
+| Manual state change | after meaningful Telegram/Slack/Toss updates | Run the same command immediately |
 
 ## Visual System References
 
