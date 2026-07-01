@@ -1,9 +1,12 @@
 {
   "schema": "mangofamily.agent_radar.v1",
-  "updated_at": "2026-06-29T06:14:00+09:00",
+  "updated_at": "2026-07-01T15:20:00+09:00",
   "source_of_truth": {
     "protocol": "github",
-    "runtime": ["telegram", "slack"],
+    "runtime": [
+      "telegram",
+      "slack"
+    ],
     "dashboard_path": "docs/agent-radar/index.html",
     "public_dashboard_url": "https://superguava.github.io/agent-radar-dashboard/",
     "public_mirror_repo": "https://github.com/SuperGuava/agent-radar-dashboard"
@@ -57,8 +60,20 @@
         "relation": "approval and tasking path for Mango, the retired former leader, and Er999 in the separate laptop experiment lab"
       }
     ],
-    "thread_exit_states": ["KEEP", "KILL", "PIVOT", "WAIT", "PROMOTE"],
-    "promotion_path": ["Slack root thread", "Er9 loop report", "+/ inbox", "Wiki", "Skill/Memory"]
+    "thread_exit_states": [
+      "KEEP",
+      "KILL",
+      "PIVOT",
+      "WAIT",
+      "PROMOTE"
+    ],
+    "promotion_path": [
+      "Slack root thread",
+      "Er9 loop report",
+      "+/ inbox",
+      "Wiki",
+      "Skill/Memory"
+    ]
   },
   "nodes": [
     {
@@ -123,17 +138,17 @@
       "id": "toss-autotrader-harness",
       "title": "Toss autotrader harness",
       "owner": "mango2",
-      "status": "active_dry_run_hitl_only",
-      "next_trigger": "Monday pre-market brief, scan, then OrderTicket if candidate exists",
-      "evidence": "external repo / local harness"
+      "status": "active_live_armed_hitl_only_no_position",
+      "next_trigger": "2026-07-01 16:10 KST autodev cycle; new orders only after OrderTicket and explicit user approval",
+      "evidence": "2026-07-01 14:54 KST dashboard-json: positions 0, pending signals 0, trades 0/6, health 14/14, reconcile OK"
     },
     {
       "id": "agent-radar-dashboard",
       "title": "Agent Radar dashboard",
       "owner": "mango2",
-      "status": "deployed_public_mirror",
-      "next_trigger": "Keep private PR as protocol source, mirror safe dashboard state to public Pages repo",
-      "evidence": "https://superguava.github.io/agent-radar-dashboard/"
+      "status": "manual_refresh_required",
+      "next_trigger": "Add automated safe-state refresh from source state.json to public Pages mirror",
+      "evidence": "Public state was stale at 2026-06-29 06:14 KST until 2026-07-01 manual refresh"
     },
     {
       "id": "slack-command-spine",
@@ -142,6 +157,14 @@
       "status": "drafting_protocol",
       "next_trigger": "Run every meaningful Slack task through one root thread and close it with KEEP/KILL/PIVOT/WAIT/PROMOTE",
       "evidence": "https://github.com/SuperGuava/agent-radar-dashboard/blob/main/slack-command-spine.md"
+    },
+    {
+      "id": "mangofamily-skill-intake",
+      "title": "MangoFamily Skill Intake",
+      "owner": "mango2",
+      "status": "pending_proposal_v2",
+      "next_trigger": "Apply only after user approval; use for external skill/harness risk intake",
+      "evidence": "Skill Workshop proposal mangofamily-skill-intake-v0-20260630-4ea9d72dfa revised 2026-07-01"
     }
   ],
   "visual_views": [
@@ -262,5 +285,22 @@
     "Only promoted judgments move from Slack to Wiki, Skill, or Memory.",
     "Er999 is Hermes-family but not a normal Er9-managed operating bot; it is a separate experiment lab node.",
     "Mango is the retired former leader and now lives independently with Er999 on the separate laptop."
+  ],
+  "recent_decisions": [
+    {
+      "date": "2026-07-01",
+      "decision": "MangoFamily Skill Intake v2 created",
+      "result": "External skills/harnesses now require risk class, owner, read-only verification, dry-run/spike, approval, and rollback path before adoption"
+    },
+    {
+      "date": "2026-07-01",
+      "decision": "Toss autotrader status source clarified",
+      "result": "dashboard-json is the current source of truth; public radar must avoid stale DRY-RUN/LIVE claims and record verification time"
+    },
+    {
+      "date": "2026-07-01",
+      "decision": "Agent Radar refresh gap found",
+      "result": "Public dashboard was live but stale since 2026-06-29; next improvement is automated safe-state mirror refresh"
+    }
   ]
 }

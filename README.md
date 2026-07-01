@@ -1,6 +1,6 @@
 # MangoFamily Agent Radar
 
-Last update: 2026-06-29 06:14 KST
+Last update: 2026-07-01 15:20 KST
 
 Stable dashboard goal: one GitHub link where Guava can check agent hierarchy, active work, current blockers, and recent decisions from mobile or outside the main machine.
 
@@ -39,9 +39,9 @@ flowchart TD
 
 | Lane | Moving now | Waiting | Gate | Evidence |
 |---|---|---|---|---|
-| Strategy | Agent Radar v2 shape | GitHub main merge | No private raw logs | PR #4 |
-| Execution | Static dashboard deployed | Safe state mirror automation | JSON and HTML must validate | GitHub Action + public Pages |
-| Finance harness | Monday plan ready | Market open scan | OrderTicket approval | Toss harness |
+| Strategy | MangoFamily Skill Intake v2 | User approval to apply live skill | No whole-catalog installs | Skill Workshop proposal |
+| Execution | Static dashboard manually refreshed | Safe state mirror automation | JSON and HTML must validate | GitHub Pages + `state.json` |
+| Finance harness | LIVE/ARMED, no position, no pending signal | 2026-07-01 16:10 KST autodev | OrderTicket approval for any order | Toss harness health 14/14 |
 | Agent ops | Er9/Hermes chain and Er999 lab role corrected | Better live status feed | Verified status only | `state.json` |
 | Command spine | Slack root-thread protocol drafting | First live Slack trial | Close as KEEP/KILL/PIVOT/WAIT/PROMOTE | `slack-command-spine.md` |
 
@@ -51,7 +51,7 @@ flowchart TD
 |---|---|
 | Operating mode | GitHub is protocol source of truth; Telegram and Slack are runtime channels |
 | Primary owner | Mango2 |
-| Current priority | Make agent work visible as a single radar board |
+| Current priority | Keep agent work visible without stale status; automate safe public refresh |
 | Update rule | Any meaningful agent handoff or decision updates this page or `state.json` |
 | Safety rule | No secrets, tokens, full account numbers, private family details, or raw chat dumps |
 
@@ -90,8 +90,9 @@ Additional correction: Mango was the former leader, but is now retired and lives
 
 | Workstream | Owner | Status | Next trigger | Evidence |
 |---|---|---|---|---|
-| Toss autotrader harness | Mango2 | active, dry-run, HITL-only order firing | Monday pre-market brief, scan, then OrderTicket if candidate exists | external repo / local harness |
-| Agent Radar dashboard | Mango2 | deployed via public GitHub Pages mirror | Keep private PR as protocol source, mirror safe dashboard state to public Pages repo | https://superguava.github.io/agent-radar-dashboard/ |
+| Toss autotrader harness | Mango2 | active, LIVE/ARMED, HITL-only, no position as of 2026-07-01 14:54 KST | 2026-07-01 16:10 KST autodev; new orders require OrderTicket approval | health 14/14, reconcile OK |
+| Agent Radar dashboard | Mango2 | manual refresh required | Add automated safe-state refresh from source `state.json` to public Pages mirror | https://superguava.github.io/agent-radar-dashboard/ |
+| MangoFamily Skill Intake | Mango2 | pending proposal v2 | Apply only after user approval; use for external skill/harness risk intake | `mangofamily-skill-intake-v0-20260630-4ea9d72dfa` |
 | Slack Command Spine v0.1 | Er9 | drafting protocol | Run every meaningful Slack task through one root thread and close it with KEEP/KILL/PIVOT/WAIT/PROMOTE | https://github.com/SuperGuava/agent-radar-dashboard/blob/main/slack-command-spine.md |
 | MangoFamily protocol source | Mango2 + Er9 | active | Keep GitHub for protocol, Slack for runtime | `docs/mangofamily/` PR history |
 | Mango4/Mango5 routing | Mango2 | repaired and monitored | Use `#home_openclaw` for direct execution checks | Slack routing notes |
@@ -109,6 +110,9 @@ Additional correction: Mango was the former leader, but is now retired and lives
 | 2026-06-29 | Slack Command Spine v0.1 selected | Work threads must have one root thread and close as KEEP/KILL/PIVOT/WAIT/PROMOTE |
 | 2026-06-29 | Er999 lab role corrected | Er999 is Hermes-family but serves as an independent experiment lab with Mango on the separate laptop |
 | 2026-06-29 | Mango status clarified | Mango is the retired former leader and now lives independently with Er999 on the separate laptop |
+| 2026-07-01 | MangoFamily Skill Intake v2 created | External skills/harnesses now require risk class, owner, read-only verification, dry-run/spike, approval, and rollback path before adoption |
+| 2026-07-01 | Toss autotrader status source clarified | `dashboard-json` is the current source of truth; public radar must avoid stale DRY-RUN/LIVE claims and record verification time |
+| 2026-07-01 | Agent Radar refresh gap found | Public dashboard was live but stale since 2026-06-29; next improvement is automated safe-state mirror refresh |
 
 ## Current Operating Contract
 
@@ -131,6 +135,7 @@ Additional correction: Mango was the former leader, but is now retired and lives
 | User gives durable operating rule | Add Recent Decision |
 | Workstream closes or stalls | Change Status and Next trigger |
 | Safety or routing incident | Add evidence link and current mitigation |
+| Public radar is manually corrected | Record why automation missed it and add the automation gap as a workstream |
 
 ## Machine-Readable State
 
@@ -181,7 +186,7 @@ Safety rule: use these for lawful collection, conversion, and supervised automat
 
 1. Now: GitHub Markdown + Mermaid + `state.json` + static HTML dashboard.
 2. Next: GitHub Project board linked to this radar.
-3. Later: automated status refresh into `state.json`.
+3. Next: automated safe status refresh into `state.json` and public mirror.
 4. Advanced: OpenTelemetry/Langfuse traces for actual agent runs.
 5. Optional: Grafana or Plane only if the static radar becomes too small.
 6. Input layer: use the AI Data Automation Stack only when a workstream needs external web, document, browser, or mobile-screen context.
